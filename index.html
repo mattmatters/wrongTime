@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Wrong Time</title>
+        <meta name="description" content="I think this is the time." />
+        <meta author="Matt Lewis" />
+        <meta property="og:url" content="http://wrongtime.date/" />
+        <meta property="og:title" content="Wrong Time" />
+        <meta property="og:description" content="This is possibly the right time." />
+        <meta property="twitter:title" content="Wrong Time" />
+        <meta property="twitter:description" content="Is my timing ok?" />
+        <meta name="application-name" content="Time Wrong">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110856410-8"></script>
+        <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', 'UA-110856410-8');
+        </script>
+        <style>
+            .contain {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="contain">
+            <h1 class="title">Wrong Time?</h1>
+            <p id="time"></p>
+            <p id="subtitle"></p>
+        </div>
+    </body>
+    <script>
+     // Canned phrases?
+     var phrases = [
+         'Is this it?',
+         'How about now?',
+         'Ok this has to be it',
+         'I\'ve really got it this time',
+         'This is it for sure now',
+         'Feeling this one',
+         'Can\'t you just pretend this is right?',
+         'This is the time!',
+         'How about this one?',
+         'Trying a new method',
+         'This method should work',
+         'This possibly is a good use of time.',
+         'Fixed it',
+         'Is it fixed?'
+     ]
+
+     // Choose a time range?
+     function randomDate() {
+         var start = new Date(1975, 0, 1);
+         var end = new Date();
+         var date = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+
+         return date.toLocaleString('en-US', { hour12: false });
+     }
+
+     // Update time?
+     function updateTime() {
+         document.getElementById('time').innerHTML = randomDate();
+     }
+
+     // Update subtitle?
+     function updateSubtitle(subtitle) {
+         document.getElementById('subtitle').innerHTML = subtitle;
+     }
+
+     // Init?
+     updateTime();
+     updateSubtitle(phrases[Math.floor(Math.random() * (phrases.length - 1))]);
+
+     // Throw into loop thing?
+     setInterval(function() {
+         updateTime();
+         updateSubtitle(phrases[Math.floor(Math.random() * (phrases.length - 1))]);
+     }, 2000);
+
+    </script>
+</html>
