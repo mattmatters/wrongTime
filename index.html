@@ -20,15 +20,44 @@
          gtag('config', 'UA-110856410-8');
         </script>
         <style>
-            .contain {
-                text-align: center;
-            }
+         @import url('https://fonts.googleapis.com/css?family=Chango|Open+Sans');
+         body {
+             background-color: #393E41;
+         }
+         h1, h2, h3 {
+             font-family: 'Chango', cursive;
+             color: #E7E5DF;
+         }
+         p, li {
+             font-family: 'Open Sans', sans-serif;
+             color: #E7E5DF;
+         }
+         .time {
+             background-color: #E9B44C;
+             border-radius: 2em;
+             border-width: .2em;
+             border-color: #D3D0CB
+             margin-top: .5em;
+             margin-bottom: .5em;
+         }
+         .title {
+             font-size: 5em;
+         }
+         #time {
+             font-size: 8em;
+             margin: 0em;
+         }
+         .contain {
+             text-align: center;
+         }
         </style>
     </head>
     <body>
         <div class="contain">
             <h1 class="title">Wrong Time?</h1>
-            <p id="time"></p>
+            <div class="time">
+                <p id="time"></p>
+            </div>
             <p id="subtitle"></p>
         </div>
     </body>
